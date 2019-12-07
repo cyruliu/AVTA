@@ -21,11 +21,11 @@
   The input language of macaw is Elf, which is not a format of object file format supported by OS X (Mach-O).
 
   To generate Elf file on MacOS, we cross-compile to a linux target.
-  - set gcc target to be a linux machine:
+  1. set gcc target to be a linux machine:
 ```
   $ gcc -fno-stack-protector -foptimize-sibling-calls -target x86_64-unknown-linux-gnu -c -o foo.o foo.c
 ```
-  - use a linker configured for that target-triple. Follow the instructions on
+  2. use a linker configured for that target-triple. Follow the instructions on
   https://stackoverflow.com/questions/39059597/how-to-create-an-elf-executable-on-mac-os-x before running: 
 ```
   $ ~/.local/binutils/x86_64-unknown-linux-gnu/bin/ld -static -o foo.exe foo.o
